@@ -15,8 +15,7 @@ const portNumber = 80;
 
 const mongoDBModule = require(`mongodb`);
 // const mongoURL = `mongodb://192.168.105.79:27017`;
-// const mongoURL = `mongodb://localhost:27017`;
-const mongoURL = `mongodb+srv://mongodb-stitch-ecommerce-rousr:RwOTsyIDqP7Hdfhi@clust01-ydaa5.gcp.mongodb.net/test`;
+const mongoURL = `mongodb://localhost:27017`;
 const options = {
   useNewUrlParser: true
 };
