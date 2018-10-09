@@ -1,0 +1,80 @@
+
+<div class="row" *ngIf="produit">
+  
+  <div class="order-1 col-sm-6 order-sm-1 col-lg-4 order-lg-1">
+    <div>
+      <app-image [image]="produit.image" [imgalt]="produit.name" [cssclass]="'redimlarge'"></app-image>  </div>
+  </div>
+  <div class="order-2 col-sm-6 order-sm-2 col-lg-4 order-lg-2">
+    <h2>{{ produit.name }}</h2>
+    <p>
+      <ngb-rating [rate]="produit.rating" max="5" readonly="readonly"></ngb-rating>
+    </p>
+    <p>{{ produit.description }}</p>
+  </div>
+  <div class="order-3 col-sm-12 order-sm-3 col-lg-4 order-lg-3">
+    <div class="card">
+      <div class="card-body text-center">
+        <p>
+          Prix :
+          <app-price [price]="produit.price"></app-price>
+        </p>
+
+        <ng-container *ngIf="produit.inStock; then enStockTabPanel; else plusEnStockTabPanel">
+
+        </ng-container>
+
+        <ng-template #enStockTabPanel>
+          <p class="text-success">
+            en stock
+          </p>
+        </ng-template>
+
+        <ng-template #plusEnStockTabPanel>
+          <p class="text-danger">
+            <strong>Momentanément indisponible</strong>
+          </p>
+        </ng-template>
+
+        <button type="button" class="btn btn-danger btn-block" [attr.disabled]="produit.inStock ? null : 'disabled'" (click)="addToCart(produit)">Ajouter au panier</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <ngb-tabset class="col-12">
+
+    <ngb-tab title="Tab Panel 1">
+      <ng-template ngbTabContent>
+        <div class="tab-pane">
+          <p>Titre 1</p>
+          <p>Possible de faire un card ou jumbotron ici.</p>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+      <ng-template ngbTabTitle>Tab Panel 2</ng-template>
+      <ng-template ngbTabContent>
+        <div class="tab-pane">
+          <p>Titre 2</p>
+          <p>Possible de faire un card ou jumbotron ici.</p>
+      </div>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab>
+        <ng-template ngbTabTitle>Tab Panel 3</ng-template>
+        <ng-template ngbTabContent>
+          <div class="tab-pane">
+            <p>Titre 3</p>
+            <p>Possible de faire un card ou jumbotron ici.</p>
+        </div>
+        </ng-template>
+      </ngb-tab>
+  
+  </ngb-tabset>
+</div>
+  
+

@@ -1,0 +1,9 @@
+<h3>Nos meilleures ventes</h3>
+<hr>
+
+<!-- Ce code fonctionne : à conserver pour livraison du 16/07 -->
+<div class="row">
+  <div *ngFor="let mVentes of produitRating" class="col-sm-6 col-md-4 col-lg-3">
+    <app-product-thumb [produit]="mVentes" [isBst]="true"></app-product-thumb>
+  </div>
+</div>

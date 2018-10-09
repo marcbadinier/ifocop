@@ -1,0 +1,22 @@
+<div class ="row" *ngIf="product">
+
+  <div class="col-sm-4">
+      <img src="/assets/images/produits/{{ product.image }}" class="img-fluid img-thumbnail">
+  </div>
+
+  <div class="col-sm-4">
+    <h2>{{ product.name }}</h2>
+    <div>
+      {{ product.description }}
+      <hr>
+      {{ product.rating }}
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+      <app-price [price]="product.price"></app-price>
+      <br>
+      <button type="button" class="btn btn-danger">Ajouter au panier</button>
+  </div>
+
+</div>

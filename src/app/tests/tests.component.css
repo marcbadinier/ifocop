@@ -1,0 +1,12 @@
+img.redim
+{
+display: block;
+max-width: 100%;
+height: auto;
+width: 200px;
+float: left;
+}
+
+h3{
+  color: gray;
+}

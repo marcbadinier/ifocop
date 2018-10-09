@@ -1,0 +1,43 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, Params } from'@angular/router';
+import { CatalogService } from '../catalog.service';
+import { IProduit } from '../interfaces';
+
+@Component({
+  selector: 'app-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.css']
+})
+
+export class ProductComponent implements OnInit {
+
+  product: IProduit;
+  
+  constructor(
+    private serviceCatalog: CatalogService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
+
+  ngOnInit() 
+  {
+    this.route.params.subscribe((params: Params) =>
+    {
+      // à ce niveau, l'objet n'est pas encore défini, car opération asynchrone..on attend le retour du listener..; mais on affiche donc un objet pas encore instancié : undefined !
+      //console.log(params.id);
+
+      this.serviceCatalog.getProductsById(params.id).subscribe(
+        (produit: IProduit) =>
+        {
+          // console.log(this.product)
+          this.product = produit;
+          // à ce niveau, l'objet est bien défini, on a bien le retour de l'objet dans la console
+          // console.log(this.product);
+        });
+    });
+  }
+
+}
+
+
+

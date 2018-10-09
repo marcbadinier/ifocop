@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  <a class="navbar-brand" routerLink="/">Accueil Shop</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> -->
+  <button class="navbar-toggler" (click)="basculerMenu()" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" [attr.aria-expanded]="!menuClosed" aria-label="Ouvrir ou fermer le menu principal">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-nav" [ngbCollapse]="menuClosed">
+    <ul class="navbar-nav mr-auto">
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/catalog">Catalogue</a>
+      </li>
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/bst">Best Sellers</a>
+      </li>
+      <!-- MBAD :Mettre en commentaire pour la build Prod -->
+      <li
+        class="nav-item active"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a class="nav-link" routerLink="/tests">Tests </a>
+      </li>
+      <!-- MBAD : Mettre en commentaire pour la build Prod -->
+    </ul>
+
+    <ul class="navbar-nav">
+      <li
+        class="nav-item"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <a routerLink="/cart" class="nav-link">Panier</a>
+      </li>
+
+      <ng-container *ngIf="loggedInUser; then jeSuisAuth; else navigationAuth"></ng-container>
+
+      <ng-template #jeSuisAuth>
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/account" class="nav-link">Votre compte</a>
+        </li>
+      </ng-template>
+
+      <ng-template #navigationAuth>
+        <li
+          class="nav-item"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">
+          <a routerLink="/connect" class="nav-link">Identifiez-vous</a>
+        </li>
+      </ng-template>
+
+    </ul>
+  </div>
+</div>
+</nav>

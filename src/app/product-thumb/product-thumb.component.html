@@ -1,0 +1,26 @@
+<div class="produit-box">
+    <p style="text-align: center">
+        <a routerLink="/product/{{ produit.id }}">
+      <app-image [image]="produit.image" [imgalt]="produit.name" [cssclass]="'redimmedium'"></app-image>
+    </a>
+    </p>
+    <div>
+      <p>
+        <a routerLink="/product/{{ produit.id }}">{{ produit.name }}</a>
+      </p>
+      <ng-container *ngIf="isBst; then showRating; else hideRating"></ng-container>
+      <ng-template #showRating>
+        <p>
+          <ngb-rating [rate]="produit.rating" [readonly]="true" max="5"></ngb-rating>
+        </p>      
+      </ng-template>
+      <ng-template #hideRating>
+        <p>
+          <br>
+        </p>
+      </ng-template>    
+      <p>
+        <app-price [price]="produit.price"></app-price>
+      </p>          
+    </div>
+  </div>

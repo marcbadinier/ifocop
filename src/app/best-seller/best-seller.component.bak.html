@@ -1,0 +1,28 @@
+<h2>Nos meilleures ventes</h2>
+
+<!-- Ce code fonctionne : à conserver pour livraison du 16/07 -->
+<div class="row">
+  <div *ngFor="let mVentes of produitRating" class="col-sm-6 col-md-4 col-lg-2">
+    <div class="text-center">
+      <!-- <img src="./assets/images/produits/{{ mVentes.image }}" alt="{{ mVentes.name }}" class="img-fluid img-thumbnail"> -->
+      <app-image [image]="mVentes.image" [imgalt]="mVentes.name" [cssclass]="'redimmedium'"></app-image>
+    </div>
+      <p class="text-center">
+      <!-- <a routerLink="/product/{{ produit.id }}">{{ produit.name }}</a> -->
+      {{mVentes.name}}
+      <!-- Rating : {{mVentes.rating}} -->
+      <ngb-rating [(rate)]="currentRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+      <!-- {{mVentes.price}}       -->
+    </p>
+  </div>
+</div>
+
+
+<!-- <h2>Nos produits</h2>
+<hr>
+
+<div class="row">
+  <div *ngFor="let produit of produitsList" class="col-sm-6 col-md-4 col-lg-3">
+    <app-product-thumb [produit]="produit"></app-product-thumb>
+  </div>
+</div> -->

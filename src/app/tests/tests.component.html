@@ -1,0 +1,44 @@
+<!-- <button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button> -->
+
+<!-- ******************************************************************* -->
+<!-- <h2>Test date localized</h2>
+<p>Date : {{ todayLocalized }}</p>
+<p>Date : {{ todayLocalized | date:'shortDate' }}</p> -->
+<!-- <p>Date : {{ todayLocalized | date:'longDate' }}</p>
+<p>Date : {{ todayLocalized | date:'fullDate' }}</p> -->
+<!-- <p>Date : {{ todayLocalized | date:'longDate' | uppercase }}</p> -->
+<!-- ******************************************************************* -->
+
+<!-- ******************************************************************* -->
+
+<!-- <h2>Prix produit : </h2>
+<p>{{ prixProduittest }}</p>
+<p>{{ prixProduittest2 }}</p>
+<p>{{ prixProduittest2 | currency: 'EUR':'symbol':'0.2-2':'fr'}}</p> -->
+<!-- ******************************************************************* -->
+
+<!-- ******************************************************************* -->
+<h3>Récup Produit</h3>
+<button type="button" class="btn btn-info" (click)="recupererProduits()">Récup</button>
+<ul>
+  <li *ngFor="let nomProduit of products">{{ nomProduit.name }}
+    <ul>
+      <li>ID : {{ nomProduit.id }}</li>
+      <li>Image : {{ nomProduit.image }}</li>
+      <li>InStock : {{ nomProduit.inStock }}</li>
+      <li>Prix : {{ nomProduit.price }} €</li>
+      <li>rating : {{ nomProduit.rating }}</li>
+      <app-image [image]="nomProduit.image" [cssclass]="'redimmedium'"></app-image>
+    </ul>
+  </li>
+</ul>
+<!-- ******************************************************************* -->
