@@ -27,7 +27,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 ## MIP Sept-2018 : DynamicWebSite ecommerce IFOCOP
-MIP V1.0
+MIP V1.1
 00/09/2018 - MIP V1.1 : appli3.js, root de l'application. NodeJs localhost, MongoDB local
 16/09/2018 - MIP V1.1 : ajout index.js, , root de l'application. NodeJs localhost, MongoDB chez MongoDB Atlas
 
+## MIP Oct-2018 : DynamicWebSite ecommerce IFOCOP
+MIP V1.2
+09/10/2018 - MIP V1.2 : adding 'statics' folder (statics files for web site). adding scr also for backup.
